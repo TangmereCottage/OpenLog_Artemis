@@ -130,7 +130,7 @@ File: OpenLog_Artemis.ino
 
 ```
 
-Once the sketch compiles, you can generate the binary via `Export compiled Binary`, which you can then upload with the 'Artemis Firmware Upload GUI' per above instructions.
+Once you get the sketch to compile (congratulations btw), you can generate the binary via `Export compiled Binary`, which you can then upload with the 'Artemis Firmware Upload GUI' per above instructions.
 
 License Information
 -------------------
