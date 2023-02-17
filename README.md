@@ -84,9 +84,51 @@ Documentation
 
 Product Versions
 ----------------
+
 * [DEV-19426](https://www.sparkfun.com/products/19426) - SparkFun OpenLog Artemis without IMU
 * [DEV-16832](https://www.sparkfun.com/products/16832) - SparkFun OpenLog Artemis
 * [SPX-15846](https://www.sparkfun.com/products/15846) - SparkX OpenLog Artemis
+
+Building New Binaries
+---------------------
+
+Although this repo provides binaries for most use cases, in some situations you will need to build your own. You can build new binaries using the Arduino IDE (double click [OpenLog_Artemis.ino](./Firmware/OpenLog_Artemis/OpenLog_Artemis.ino)). This is generally straightforward, except that you will (**1**) have to install many libraries and (**2**) set various defines in [OpenLog_Artemis.ino](./Firmware/OpenLog_Artemis/OpenLog_Artemis.ino) correctly. Here are some of the more important ones:
+
+```c
+
+File: OpenLog_Artemis.ino
+
+...
+
+// *****************************
+// POWERLOSS PROTECTION
+//#define noPowerLossProtection // Uncomment this line to disable the sleep-on-power-loss functionality
+
+...
+
+// *****************************
+// HARDWARE VERSIONS
+// Essential to get these right, otherwise nothing works. 
+// Define the pin functions
+// Depends on hardware version. This can be found as a marking on the PCB.
+// x04 was the SparkX 'black' version.
+// v10 was the first red version.
+
+// the 'red' version
+#define HARDWARE_VERSION_MAJOR 1
+#define HARDWARE_VERSION_MINOR 0
+
+// the 'black' version
+//#define HARDWARE_VERSION_MAJOR 0
+//#define HARDWARE_VERSION_MINOR 4
+
+...
+
+// *****************************
+// SD CARD TYPES
+#define SD_FAT_TYPE 3 // SD_FAT_TYPE = 0 for SdFat/File, 1 for FAT16/FAT32, 2 for exFAT, 3 for FAT16/FAT32 and exFAT.
+
+```
 
 License Information
 -------------------
