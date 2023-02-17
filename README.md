@@ -92,7 +92,7 @@ Product Versions
 Building New Binaries
 ---------------------
 
-Although this repo provides binaries for most use cases, in some situations you will need to build your own. You can build new binaries using the Arduino IDE (double click [OpenLog_Artemis.ino](./Firmware/OpenLog_Artemis/OpenLog_Artemis.ino)). This is generally straightforward, except that you will (**1**) have to install many libraries and (**2**) set various defines in [OpenLog_Artemis.ino](./Firmware/OpenLog_Artemis/OpenLog_Artemis.ino) correctly. Here are some of the more important ones:
+Although this repo provides binaries for most use cases, in some situations you will need to build your own. You can build new binaries using the Arduino IDE (double click [OpenLog_Artemis.ino](./Firmware/OpenLog_Artemis/OpenLog_Artemis.ino), then compile sketch). This is generally straightforward, except that you will (**1**) have to install many libraries and (**2**) set various defines in [OpenLog_Artemis.ino](./Firmware/OpenLog_Artemis/OpenLog_Artemis.ino) correctly. Here are some of the more important ones:
 
 ```c
 
@@ -129,6 +129,8 @@ File: OpenLog_Artemis.ino
 #define SD_FAT_TYPE 3 // SD_FAT_TYPE = 0 for SdFat/File, 1 for FAT16/FAT32, 2 for exFAT, 3 for FAT16/FAT32 and exFAT.
 
 ```
+
+Once the sketch compiles, you can generate the binary via `Export compiled Binary`, which you can then upload with the 'Artemis Firmware Upload GUI' per above instructions.
 
 License Information
 -------------------
